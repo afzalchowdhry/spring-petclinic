@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh script: '''./start.sh'''
+                build 'deploy'
             }
         }
     }
