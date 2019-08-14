@@ -15,14 +15,11 @@ pipeline {
         stage('Release') {
             steps {
                 sh './mvnw package'
-                sh 'pwd'
-                sh 'ls'
-                sh 'docker build -t spring-petclinic:1.0 .'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker run -d --name spring-petclinic -p 8090:8090 localhost/spring-petclinic:1.0'
+                sh 'java -jar target/*.jar'
             }
         }
     }
