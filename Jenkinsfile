@@ -19,8 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'chmod 755 start.sh'
-                sh './start.sh'
+                sh 'nohup java -jar target/*.jar &'
             }
         }
     }
