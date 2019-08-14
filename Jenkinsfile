@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Release') {
             steps {
-                echo 'Release..'
+                echo 'Packaging..'
             }
         }
         stage('Deploy') {
