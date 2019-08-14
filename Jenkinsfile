@@ -15,6 +15,8 @@ pipeline {
         stage('Release') {
             steps {
                 sh './mvnw package'
+                sh 'pwd'
+                sh 'ls'
                 sh 'docker build -t spring-petclinic:1.0 .'
             }
         }
