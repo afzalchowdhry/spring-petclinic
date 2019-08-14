@@ -19,7 +19,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'chmod 755 start.sh'
+                sh 'chmod +x start.sh'
+                sh 'export JENKINS_NODE_COOKIE=dontKillMe'
                 sh "./start.sh"
             }
         }
