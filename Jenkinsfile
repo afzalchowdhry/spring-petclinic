@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'nohup java -jar target/*.jar &'
+                sh 'nohup java -jar target/*.jar & .'
             }
         }
     }
