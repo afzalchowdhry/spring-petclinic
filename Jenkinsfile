@@ -4,22 +4,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh './mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh './mvnw test'
             }
         }
         stage('Release') {
             steps {
-                echo 'PackagingEventually...'
+                sh './mvnw package'
+                sh 'docker build -t spring-petclinic:1.0 .'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                sh 'docker run -d --name spring-petclinic -p 8090:8090 localhost/spring-petclinic:1.0'
             }
         }
     }
