@@ -9,6 +9,6 @@ phases:
     commands:
       - echo Build completed on 'date'
       - mvn package
-  artifacts:
+artifacts:
     files:
       - target/spring-petclinic-2.1.0.jar
