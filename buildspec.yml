@@ -1,6 +1,9 @@
 version: 0.1
 
 phases:
+  install:
+    runtime-version:
+      java: openjdk8
   build:
     commands:
       - echo build started on 'date'
